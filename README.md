@@ -1,5 +1,5 @@
 # collision2d
-Provides basic 2D collision detection for V.
+Provides basic *WIP* 2D collision detection for V.
 See [this demo](https://github.com/scurty-labs/collision2d/blob/master/examples/demo.v) for example usage.
 
 ## Features
