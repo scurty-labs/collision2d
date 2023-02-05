@@ -48,7 +48,7 @@ pub fn (mut aabb AABB) set_size(size vec.Vec2[f32]) {
 	aabb.half_size = size.mul_scalar[f32](0.5)
 }
 
-// --- Box2D ---
+/* --- Box2D ---
 
 pub struct Box2D {
 	pub mut:
@@ -98,7 +98,7 @@ pub fn (box2d Box2D) get_verticies() []vec.Vec2[f32] {
 	]
 
 	return verts_result
-}
+}*/
 
 
 // --- Circle ---
