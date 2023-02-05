@@ -1,5 +1,6 @@
 # collision2d
 Provides basic 2D collision detection for V.
+See [this demo](https://github.com/scurty-labs/collision2d/blob/master/examples/demo.v) for example usage.
 
 ## Features
 * point_on_line
@@ -11,6 +12,6 @@ Provides basic 2D collision detection for V.
 * circle_meets_aabb
 * aabb_meets_aabb
 
-## W.I.P
-* Raycasting
-* Rotated Rectangle Collisions
+## Planned Features
+* Simple Raycasting
+* Rotated Rectangle Collision(S.A.T)
