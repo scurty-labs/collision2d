@@ -1,4 +1,4 @@
-
+module main
 import gg
 import gx
 import collision2d as collision
