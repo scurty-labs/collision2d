@@ -1,5 +1,5 @@
 # collision2d
-Provides basic 2D collision detection.
+Provides basic 2D collision detection for V.
 
 ## Features
 * point_on_line
