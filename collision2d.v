@@ -22,7 +22,7 @@ pub fn point_on_line(point vec.Vec2[f32], line Line2D) bool {
 
 }
 
-// point_in_circle Returns true of a Vec2(point) is within a Circle
+// point_in_circle Returns true if a Vec2(point) is within a circle
 pub fn point_in_circle(point vec.Vec2[f32], circle Circle) bool {
 	circle_center := circle.get_center()
 	center_to_point := point.sub(circle_center)
@@ -30,7 +30,7 @@ pub fn point_in_circle(point vec.Vec2[f32], circle Circle) bool {
 	return (squared < circle.radius * circle.radius) // ^2 SAVES CPU CYCLES
 }
 
-// point_in_aabb Returns true of a Vec2(point) is within an axis aligned bounding box(AABB) A.K.A Rectangle
+// point_in_aabb Returns true if a Vec2(point) is within an axis aligned bounding box(AABB) A.K.A Rectangle
 pub fn point_in_aabb(point vec.Vec2[f32], box AABB) bool {
 	min := box.get_min()
 	max := box.get_max()
@@ -53,7 +53,7 @@ pub fn point_in_box2d(point vec.Vec2[f32], box2d Box2D) bool {
 // --- Line Collision ---
 // --------------------------------------------------
 
-// line_in_circle Returns true of a Line2D intersects a Circle
+// line_in_circle Returns true if a Line2D intersects a circle
 pub fn line_in_circle(line Line2D, circle Circle) bool {
 
 	if point_in_circle(line.start, circle) || point_in_circle(line.end, circle) {
@@ -75,7 +75,7 @@ pub fn line_in_circle(line Line2D, circle Circle) bool {
 	return point_in_circle(nearest_point, circle)
 }
 
-// line_in_aabb Returns true of a Line2D intersects an axis aligned bounding box
+// line_in_aabb Returns true if a Line2D intersects an axis aligned bounding box
 pub fn line_in_aabb(line Line2D, box AABB) bool {
 	if point_in_aabb(line.start, box) || point_in_aabb(line.end, box) {
 		return true

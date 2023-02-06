@@ -24,6 +24,7 @@ pub fn new_aabb(min vec.Vec2[f32], max vec.Vec2[f32]) AABB {
 	}
 }
 */
+// new_aabb Convenience function that returns a new instance of a AABB struct
 pub fn new_aabb(pos vec.Vec2[f32], width f32, height f32) AABB {
 	n_size := vec.Vec2[f32]{width, height}
 	n_center := n_size.mul_scalar[f32](0.5)
@@ -35,14 +36,17 @@ pub fn new_aabb(pos vec.Vec2[f32], width f32, height f32) AABB {
 	}
 }
 
+// get_min Retrieves the AABB 'min' (|Position| - Half Size) Vec2 - Vec2 Scalar
 pub fn (aabb AABB) get_min() vec.Vec2[f32] {
 	return aabb.position.sub(aabb.half_size)
 }
 
+// get_min Retrieves the AABB 'max' (|Position| + Half Size) Vec2 + Vec2 Scalar
 pub fn (aabb AABB) get_max() vec.Vec2[f32] {
 	return aabb.position.add(aabb.half_size)
 }
 
+// set_size Sets the AABB(Rect) size and calculates size/2 (half_size)
 pub fn (mut aabb AABB) set_size(size vec.Vec2[f32]) {
 	aabb.size = size
 	aabb.half_size = size.mul_scalar[f32](0.5)
@@ -107,6 +111,8 @@ pub struct Circle {
 		radius f32 = 1.0
 		position vec.Vec2[f32]
 }
+
+// new_circle Convenience function for creating a circle struct
 pub fn new_circle(position vec.Vec2[f32], radius f32) Circle {
 	return Circle{
 		position: position
@@ -114,6 +120,7 @@ pub fn new_circle(position vec.Vec2[f32], radius f32) Circle {
 	}
 }
 
+// get_center Retrieves the Circle center. Due to having a literal center shape origin, this would be the 'position'
 pub fn (circle Circle) get_center() vec.Vec2[f32] {
 	return circle.position
 }
@@ -126,6 +133,7 @@ pub struct Line2D {
 		end vec.Vec2[f32]
 }
 
+// length_squared Returns the length of Line2D squared (|Vector.Magnitude| * |Vector.Magnitude|) V^2
 pub fn (line Line2D) length_squared() f32 {
 	length := line.end.sub(line.start).magnitude()
 	return (length * length)
